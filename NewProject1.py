@@ -1,11 +1,10 @@
 import requests
 
 def handler(event, context):
-    
     try:
         res = requests.get(
-            "https://play.railsbank.com/v1/customer/version",
-            params={},
+            "https://api.sandbox.transferwise.tech/v1/addresses",
+            params={"profile":"1"},
             headers={"Accept":"application/json"}
         )
         # your code goes here
