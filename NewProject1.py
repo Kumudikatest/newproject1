@@ -1,14 +1,16 @@
 import requests
 
+
 def handler(event, context):
+    
     try:
         res = requests.get(
-            "https://api.sandbox.transferwise.tech/v1/addresses",
-            params={"profile":"1"},
-            headers={"Accept":"application/json"}
+            "http://demo.fintechsandpit.com/contact-for-access",
+            params={},
+            headers={"Accept":""}
         )
-        # your code goes here
         print(res)
+        # your code goes here
     except BaseException as e:
         # error handling goes here
         print(e)

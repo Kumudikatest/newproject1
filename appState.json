@@ -11,8 +11,8 @@
         "isRemovable": true,
         "filePath": "NewProject1.py",
         "cursor": {
-          "lineNumber": 13,
-          "column": 35
+          "lineNumber": 14,
+          "column": 31
         },
         "config": {
           "runtime": "python3.8",
@@ -398,7 +398,7 @@
     "platform": "AWS",
     "language": "python",
     "platformRegions": {},
-    "lastSave": 1587736038685
+    "lastSave": 1587736358103
   },
   "VCS_STATE": {
     "provider": "GitHub",
