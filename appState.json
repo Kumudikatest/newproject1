@@ -1,1 +1,95 @@
-{"EDITOR_STATE":{"allProjectFiles":{"2d44f782-8b74-4dda-8b67-0cfb2da7bb5c":{"id":"2d44f782-8b74-4dda-8b67-0cfb2da7bb5c","parent":null,"name":"newproject1","type":"DIRECTORY","isDirectory":true,"children":["ac42c102-c288-4a13-bcb7-9fac80869269"],"isRemovable":false,"filePath":"newproject1"},"ac42c102-c288-4a13-bcb7-9fac80869269":{"id":"ac42c102-c288-4a13-bcb7-9fac80869269","parent":"2d44f782-8b74-4dda-8b67-0cfb2da7bb5c","name":"lambda.js","type":"LAMBDA_FILE","isDirectory":false,"children":[],"isRemovable":true,"filePath":"newproject1/lambda.js","code":"let AWS = require('aws-sdk');\nconst sns = new AWS.SNS();\n\nexports.handler = function (event, context, callback) {\n    sns.publish({\n        Message: 'test',\n        MessageAttributes: {},\n        MessageStructure: 'String',\n        TopicArn: 'arn:aws:sns:us-east-1:318300609668:new'\n    }).promise()\n        .then(data => {\n            // your code goes here\n        })\n        .catch(err => {\n            // error handling goes here\n        });\n\n    callback(null, { \"message\": \"Successfully executed\" });\n}","triggers":[],"config":{"runtime":"nodejs8.10","timeout":60,"memory":128}}},"deletedFiles":[],"rootNode":"2d44f782-8b74-4dda-8b67-0cfb2da7bb5c","openFiles":["ac42c102-c288-4a13-bcb7-9fac80869269"],"currentFileId":"ac42c102-c288-4a13-bcb7-9fac80869269","resources":{"snsusEast1new":{"name":"snsusEast1new","type":"SNS","config":{"topicMode":0,"topicName":"new","topicArn":"arn:aws:sns:us-east-1:318300609668:new","topicRegion":"us-east-1","snsType":0,"topicDisplayName":"lk","subscriptions":[]},"globallyEditable":true}},"envVariables":[{"lambdaId":"all","varKey":"SIGMA_AWS_ACC_ID","varValue":null,"shouldPersist":false,"displayOnly":false,"editable":false}],"packageJSON":{"dependencies":{}},"lambdaId":"ac42c102-c288-4a13-bcb7-9fac80869269"},"PROJECT_META":{"projectName":"newproject1","projectDescription":"","projectVersion":"1.0.0","projectRegion":"us-east-1","platform":"AWS"},"VCS_STATE":{"provider":"GitHub","repo":{"name":"newproject1","url":"https://github.com/Kumudikatest/newproject1"}}}
+{
+  "EDITOR_STATE": {
+    "allProjectFiles": {
+      "cbb3c9a7-c386-43c0-8d46-acc56125c9e5": {
+        "id": "cbb3c9a7-c386-43c0-8d46-acc56125c9e5",
+        "parent": null,
+        "name": "NewProject1.py",
+        "type": "PYTHON_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "NewProject1.py",
+        "cursor": {
+          "lineNumber": 14,
+          "column": 16
+        },
+        "config": {
+          "runtime": "python3.8",
+          "handler": "handler",
+          "timeout": 60,
+          "memory": 128,
+          "layers": [],
+          "name": "NewProject1"
+        },
+        "triggers": [
+          {
+            "resourceName": "snsusEast1TestSNS",
+            "config": {}
+          }
+        ]
+      }
+    },
+    "openFiles": [
+      "cbb3c9a7-c386-43c0-8d46-acc56125c9e5"
+    ],
+    "currentFileId": "cbb3c9a7-c386-43c0-8d46-acc56125c9e5",
+    "resources": {
+      "snsusEast1TestSNS": {
+        "name": "snsusEast1TestSNS",
+        "type": "SNS",
+        "config": {
+          "topicMode": 1,
+          "topicName": "TestSNS",
+          "topicArn": "arn:aws:sns:us-east-1:318300609668:TestSNS",
+          "topicRegion": "us-east-1",
+          "snsType": 0,
+          "subscriptions": []
+        }
+      }
+    },
+    "customTemplate": {
+      "overrideDefault": false,
+      "dialect": null,
+      "definitions": null
+    },
+    "envVariables": [
+      {
+        "lambdaId": "all",
+        "varKey": "SIGMA_AWS_ACC_ID",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      }
+    ],
+    "packageJSON": {
+      "dependencies": {
+        "requests": {
+          "name": "requests",
+          "language": "python",
+          "version": "2.18.0",
+          "dev": false,
+          "notRemovable": false
+        }
+      }
+    }
+  },
+  "PROJECT_META": {
+    "projectName": "NewProject1",
+    "projectDescription": "",
+    "projectVersion": "1.0.0",
+    "projectRegion": "us-east-1",
+    "platform": "AWS",
+    "language": "python",
+    "platformRegions": {},
+    "lastSave": 1587731994210
+  },
+  "VCS_STATE": {
+    "provider": "GitHub",
+    "repo": {
+      "name": "newproject1",
+      "url": "https://github.com/Kumudikatest/newproject1"
+    }
+  }
+}
