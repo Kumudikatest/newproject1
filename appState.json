@@ -11,7 +11,7 @@
         "isRemovable": true,
         "filePath": "NewProject1.py",
         "cursor": {
-          "lineNumber": 14,
+          "lineNumber": 16,
           "column": 17
         },
         "config": {
@@ -24,8 +24,11 @@
         },
         "triggers": [
           {
-            "resourceName": "snsusEast1TestSNS",
-            "config": {}
+            "resourceName": "kinesisK",
+            "config": {
+              "StartingPosition": "LATEST",
+              "BatchSize": "100"
+            }
           }
         ],
         "testCases": {
@@ -54,6 +57,20 @@
           "topicRegion": "us-east-1",
           "snsType": 0,
           "subscriptions": []
+        }
+      },
+      "kinesisK": {
+        "name": "kinesisK",
+        "type": "Kinesis",
+        "config": {
+          "mode": 0,
+          "StreamName": "K",
+          "shards": 1,
+          "region": "us-east-1",
+          "triggerParams": {
+            "StartingPosition": "LATEST",
+            "BatchSize": "100"
+          }
         }
       }
     },
@@ -92,7 +109,7 @@
     "platform": "AWS",
     "language": "python",
     "platformRegions": {},
-    "lastSave": 1587732697334
+    "lastSave": 1587733156823
   },
   "VCS_STATE": {
     "provider": "GitHub",

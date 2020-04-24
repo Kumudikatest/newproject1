@@ -1,11 +1,13 @@
 import requests
+import json
 
 def handler(event, context):
     try:
-        res = requests.get(
-            "https://1forge.com/forex-quotes/quotes",
+        res = requests.post(
+            "https://api.sandbox.paypal.com/v2/checkout/orders",
             params={},
-            headers={"Accept":"application/json"}
+            headers={"Accept":"application/json","Content-Type":"application/json"},
+            data=json.dumps({"Test":"1"})
         )
         # your code goes here
         print(res)
@@ -13,5 +15,5 @@ def handler(event, context):
         # error handling goes here
         print(e)
         raise(e)
-    
+  
     return {"message": "Successfully executed"}
