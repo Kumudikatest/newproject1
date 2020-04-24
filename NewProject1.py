@@ -1,14 +1,12 @@
 import requests
-import json
 
 def handler(event, context):
     
     try:
-        res = requests.post(
-            "https://sandbox.plaid.com/auth/get",
+        res = requests.get(
+            "https://play.railsbank.com/v1/customer/version",
             params={},
-            headers={"Accept":"application/json","Content-Type":"application/json"},
-            data=json.dumps({"test":"1"})
+            headers={"Accept":"application/json"}
         )
         # your code goes here
         print(res)

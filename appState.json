@@ -11,8 +11,8 @@
         "isRemovable": true,
         "filePath": "NewProject1.py",
         "cursor": {
-          "lineNumber": 18,
-          "column": 17
+          "lineNumber": 14,
+          "column": 35
         },
         "config": {
           "runtime": "python3.8",
@@ -24,9 +24,10 @@
         },
         "triggers": [
           {
-            "resourceName": "cognitoTestCognito",
+            "resourceName": "ddbtesthistory",
             "config": {
-              "triggerType": "CustomMessage"
+              "StartingPosition": "LATEST",
+              "BatchSize": "100"
             }
           }
         ],
@@ -72,17 +73,19 @@
           }
         }
       },
-      "cognitoTestCognito": {
-        "name": "cognitoTestCognito",
+      "cognitot": {
+        "name": "cognitot",
         "type": "CognitoIdentityServiceProvider",
         "config": {
           "mode": 1,
-          "name": "Test Cognito",
-          "arn": "arn:aws:cognito-idp:us-east-1:318300609668:userpool/us-east-1_HdYJb7Znp",
+          "name": "t",
+          "arn": "arn:aws:cognito-idp:us-east-1:318300609668:userpool/us-east-1_5BrlOwrjJ",
           "userPool": {
-            "Id": "us-east-1_HdYJb7Znp",
-            "Name": "Test Cognito",
-            "LambdaConfig": {},
+            "Id": "us-east-1_5BrlOwrjJ",
+            "Name": "t",
+            "LambdaConfig": {
+              "PreSignUp": "arn:aws:lambda:us-east-1:318300609668:function:3103changestest"
+            },
             "Policies": {
               "PasswordPolicy": {
                 "MinimumLength": 8,
@@ -100,14 +103,11 @@
             "EmailConfiguration": {
               "EmailSendingAccount": "COGNITO_DEFAULT"
             },
-            "SmsConfiguration": {
-              "SnsCallerArn": "arn:aws:iam::318300609668:role/service-role/TestCognito-SMS-Role",
-              "ExternalId": "a5aa9c3d-325f-4d4c-bd3e-06f1485e8375"
-            },
             "UserPoolTags": {},
             "AdminCreateUserConfig": {
               "AllowAdminCreateUserOnly": false,
-              "UnusedAccountValidityDays": 7
+              "UnusedAccountValidityDays": 7,
+              "InviteMessageTemplate": {}
             },
             "SchemaAttributes": [
               {
@@ -320,8 +320,45 @@
                 "NumberAttributeConstraints": {
                   "MinValue": "0"
                 }
+              },
+              {
+                "Name": "custom:timezone",
+                "AttributeDataType": "String",
+                "DeveloperOnlyAttribute": false,
+                "Mutable": true,
+                "Required": false,
+                "StringAttributeConstraints": {}
               }
             ]
+          }
+        }
+      },
+      "alexaSK15970ba19cb64f6f9b22e6d5710707f0": {
+        "name": "alexaSK15970ba19cb64f6f9b22e6d5710707f0",
+        "type": "ALEXA",
+        "config": {
+          "type": 1,
+          "verifiedID": true,
+          "skillID": "amzn1.ask.skill.15970ba1-9cb6-4f6f-9b22-e6d5710707f0",
+          "applicationID": ""
+        }
+      },
+      "ddbtesthistory": {
+        "name": "ddbtesthistory",
+        "type": "DynamoDB",
+        "config": {
+          "mode": 1,
+          "table": {
+            "arn": "arn:aws:dynamodb:us-east-1:318300609668:table/testhistory",
+            "name": "testhistory",
+            "partitionKey": "Name",
+            "partitionKeyType": "S",
+            "hasSortKey": false,
+            "sortKey": "",
+            "sortKeyType": "S",
+            "payPerRequest": true,
+            "mode": 1,
+            "streamArn": "arn:aws:dynamodb:us-east-1:318300609668:table/testhistory/stream/2020-03-08T17:34:03.822"
           }
         }
       }
@@ -361,7 +398,7 @@
     "platform": "AWS",
     "language": "python",
     "platformRegions": {},
-    "lastSave": 1587734304433
+    "lastSave": 1587735575996
   },
   "VCS_STATE": {
     "provider": "GitHub",
