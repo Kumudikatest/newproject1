@@ -12,7 +12,7 @@
         "filePath": "NewProject1.py",
         "cursor": {
           "lineNumber": 14,
-          "column": 16
+          "column": 17
         },
         "config": {
           "runtime": "python3.8",
@@ -27,7 +27,16 @@
             "resourceName": "snsusEast1TestSNS",
             "config": {}
           }
-        ]
+        ],
+        "testCases": {
+          "b304d4b1-8f28-41a8-a589-b65d9cf84815": {
+            "id": "b304d4b1-8f28-41a8-a589-b65d9cf84815",
+            "name": "Test event",
+            "functionId": "cbb3c9a7-c386-43c0-8d46-acc56125c9e5",
+            "event": "{\"key1\": \"value1\", \"key2\": \"value2\", \"key3\": \"value3\"}",
+            "eventTemplate": "hello-world"
+          }
+        }
       }
     },
     "openFiles": [
@@ -83,7 +92,7 @@
     "platform": "AWS",
     "language": "python",
     "platformRegions": {},
-    "lastSave": 1587731994210
+    "lastSave": 1587732697334
   },
   "VCS_STATE": {
     "provider": "GitHub",

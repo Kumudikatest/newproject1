@@ -3,7 +3,7 @@ import requests
 def handler(event, context):
     try:
         res = requests.get(
-            "https://api.tink.com/api/v1/accounts/list",
+            "https://1forge.com/forex-quotes/quotes",
             params={},
             headers={"Accept":"application/json"}
         )
